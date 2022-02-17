@@ -29,8 +29,13 @@ systemctl status mosquitto
 # sudo systemctl (start|stop) mosquitto
 
 # Secure mosquitto broker
+# Add listener on port 1883 (https://mosquitto.org/documentation/migrating-to-2-0/)
 sudo mosquitto_passwd -c /etc/mosquitto/passwd <USER>
-# Add the following line to mosquitto.conf
+# Add the following lines to mosquitto.conf
 # allow_anonymous false
+# listener 1883 
 # password_file /etc/mosquitto/passwd 
 sudo nano /etc/mosquitto/mosquitto.conf
+
+
+
