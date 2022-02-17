@@ -37,5 +37,13 @@ sudo mosquitto_passwd -c /etc/mosquitto/passwd <USER>
 # password_file /etc/mosquitto/passwd 
 sudo nano /etc/mosquitto/mosquitto.conf
 
+# restart the mosquitto service to apply changes
+pi@raspberrypi:~/Downloads $ sudo systemctl restart mosquitto
+# test your broker 
+# subscribing to the 'test' topic
+pi@raspberrypi:~/Downloads $ mosquitto_sub -h localhost -t test -u "pi" -P "raspberry"
+# publish "hello world" to the "test" topic on another terminal window
+pi@raspberrypi:~/Downloads $ mosquitto_pub -h localhost -t test -m "hello world" -u "pi" -P "raspberry"
+
 
 
