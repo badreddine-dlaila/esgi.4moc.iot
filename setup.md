@@ -36,7 +36,6 @@ sudo mosquitto_passwd -c /etc/mosquitto/passwd <USER>
 # listener 1883 
 # password_file /etc/mosquitto/passwd 
 sudo nano /etc/mosquitto/mosquitto.conf
-
 # restart the mosquitto service to apply changes
 pi@raspberrypi:~/Downloads $ sudo systemctl restart mosquitto
 # test your broker 
