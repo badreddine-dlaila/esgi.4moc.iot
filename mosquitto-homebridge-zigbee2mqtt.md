@@ -53,7 +53,7 @@ version: '2'
 services:
 
   homebridge:
-    image: oznu/homebridge
+    image: homebridge/homebridge
     container_name: homebridge
     restart: unless-stopped
     network_mode: host
