@@ -1,0 +1,72 @@
+{
+    "bridge": {
+        "name": "Homebridge 3B85",
+        "username": "0E:EF:DE:C9:57:EF",
+        "port": 51088,
+        "pin": "422-19-298",
+        "advertiser": "bonjour-hap"
+    },
+    "accessories": [
+        {
+            "accessory": "SunPosition",
+            "name": "Sun",
+            "location": {
+                "lat": 48.890046,
+                "long": 2.381375
+            }
+        },
+        {
+            "accessory": "DummyGarage",
+            "name": "DummyGarage"
+        },
+        {
+            "accessory": "DummyFan",
+            "name": "DummyFan"
+        },
+        {
+            "accessory": "DummyLock",
+            "name": "DummyLock"
+        },
+        {
+            "type": "weatherStation",
+            "name": "mqtt-weather-station",
+            "url": "localhost:1883",
+            "username": "",
+            "password": "",
+            "topics": {
+                "getCurrentTemperature": "esgi/moc4/bdl/weather/temperature"
+            },
+            "accessory": "mqttthing"
+        },
+        {
+            "type": "lightbulb-OnOff",
+            "name": "mqtt-light-bilb-1",
+            "username": "",
+            "password": "",
+            "topics": {
+                "getOn": "esgi/moc4/bdl/light1",
+                "setOn": "esgi/moc4/bdl/light1"
+            },
+            "accessory": "mqttthing"
+        },
+        {
+            "type": "window",
+            "name": "mqtt-window-1",
+            "username": "",
+            "password": "",
+            "topics": {
+                "getCurrentPosition": "esgi/moc4/bdl/window1/position/current",
+                "getPositionState": "esgi/moc4/bdl/window1/position/state",
+                "setTargetPosition": "esgi/moc4/bdl/window1/position/target"
+            },
+            "accessory": "mqttthing"
+        }
+    ],
+    "platforms": [
+        {
+            "name": "Config",
+            "port": 8181,
+            "platform": "config"
+        }
+    ]
+}
