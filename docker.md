@@ -8,7 +8,7 @@ sudo systemctl start docker
 sudo usermod -aG docker pi
 # Check installation
 docker version
-sudo docker run armhf/hello-world
+sudo docker run hello-world
 ```
 
 # Install portainer
