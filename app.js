@@ -1,5 +1,6 @@
 var mqtt = require('mqtt')
 
+var topicPrefix = 'esgi/moc4/<NAME>'
 var client = mqtt.connect('mqtt://<IP-@>', {
     port: 1883,
     username: '',
@@ -14,7 +15,6 @@ var client = mqtt.connect('mqtt://<IP-@>', {
 })
 
 client.on('connect', function () {
-    client.subscribe('esgi/moc4/#')
     client.subscribe(`${topicPrefix}/#`, function (err) {
         if (!err) {
             client.publish(`${topicPrefix}/test-nodejs`, 'Hello mqtt')
